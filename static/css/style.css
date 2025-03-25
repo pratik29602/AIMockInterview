@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+}
+
+#camera-status, #microphone-status {
+    margin: 10px 0;
+}
+
+#proceed-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#proceed-btn:hover {
+    background-color: #45a049;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.list-group-item {
+    border: none;
+    font-size: 1rem;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+}

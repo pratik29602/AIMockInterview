@@ -1,0 +1,2 @@
+->  pip install -r requirements.txt
+-> run file -> python app.py

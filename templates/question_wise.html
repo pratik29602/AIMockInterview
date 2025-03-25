@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Questions Analysis</h2>
+        
+        <h4 class="mt-4">Correct Questions</h4>
+        <table class="table table-bordered">
+            <thead class="table-success">
+                <tr>
+                    <th>Question</th>
+                    <th>User Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in correct_questions %}
+                <tr>
+                    <td>{{ item.question }}</td>
+                    <td>{{ item.user_answer }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h4 class="mt-4">Wrong Questions</h4>
+        <table class="table table-bordered">
+            <thead class="table-danger">
+                <tr>
+                    <th>Question</th>
+                    <th>User Answer</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in wrong_questions %}
+                <tr>
+                    <td>{{ item.question }}</td>
+                    <td>{{ item.user_answer }}</td>
+                    <td>{{ item.expected_answer }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

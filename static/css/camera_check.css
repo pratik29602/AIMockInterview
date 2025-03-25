@@ -1,0 +1,38 @@
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    color: #333;
+}
+
+h2, h4 {
+    font-weight: 600;
+}
+
+.text-warning {
+    color: #ffc107;
+}
+
+.text-success {
+    color: #28a745;
+}
+
+.text-danger {
+    color: #dc3545;
+}
+
+.check-section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

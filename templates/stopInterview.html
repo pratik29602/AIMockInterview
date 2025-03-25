@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheating Detected</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        h1 {
+            color: #d8000c;
+            font-size: 2rem;
+            text-align: center;
+        }
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="cheatingMessage">
+        <p>Your interview has been stopped due to detected cheating...</p>
+    </div>
+
+    <script>
+        function  main_page(){
+            // window.location.href('/')
+            window.location.href = '/'
+
+
+        }
+        // window.location.href = '/stopInterview'
+        setTimeout(main_page, 6000);
+    </script>
+
+<script>
+    // Function to prevent back navigation
+    function preventBackNavigation() {
+        // Push a dummy state to the history
+        history.pushState(null, '', window.location.href);
+        window.onpopstate = function () {
+            // Push the state back again to prevent going back
+            history.pushState(null, '', window.location.href);
+            alert("You cannot go back to the previous page!");
+        };
+    }
+
+    // Call the function on page load
+    window.onload = preventBackNavigation;
+</script>
+</body>
+</html>

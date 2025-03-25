@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Camera & Microphone Check</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Camera Check JavaScript -->
+    <script src="{{ url_for('static', filename='js/camera_check.js') }}" defer></script>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100 bg-light">
+
+        <div class="card shadow-lg p-4 text-center">
+            <h2 class="mb-4 fw-bold">Device Check</h2>
+            <div class="check-section mb-4">
+                <h4 id="camera-check" class="text-warning">Checking Camera...</h4>
+            </div>
+            <div class="check-section mb-4">
+                <h4 id="mic-check" class="text-warning">Checking Microphone...</h4>
+            </div>
+            <button id="proceed-btn" class="btn btn-success mt-3" style="display:none;">Proceed to Interview</button>
+        </div>
+        <div>
+        <h1>You selected: {{ language }}</h1>
+    </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

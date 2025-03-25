@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+    <style>
+        /* Base styling for the form */
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+        }
+        .card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .input {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-label {
+    position: absolute;
+    top: 5px; /* Adjusted to move the label up */
+    left: 10px;
+    color: #888;
+    font-size: 14px;
+    transition: 0.3s;
+}
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+    top: 7px; /* Reduced distance for smoother travel */
+    font-size: 13px; /* Slightly smaller font size */
+    color: #555;
+}
+        .action {
+            text-align: center;
+        }
+        .action-button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card-info {
+            font-size: 12px;
+            text-align: center;
+            color: #666;
+        }
+        .action-button{
+            background-color: #6658d3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-image">    
+                <h2 class="card-heading">
+                    Get started
+                    <small>Let us create your account</small>
+                </h2>
+            </div>
+            <form action="{{ url_for('instructions') }}" method="post" class="card-form">
+                <div class="input">
+                    <input type="text" id="name" name="name" class="input-field" required placeholder=" "/>
+                    <label for="name" class="input-label ">Full name</label>
+                </div>
+                <div class="input">
+                    <input type="text" id="email" class="input-field" required placeholder=" "/>
+                    <label for="email" class="input-label">Email</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Get started</button>
+                </div>
+            </form>
+            <div class="card-info">
+                <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners to handle label behavior
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('input', function() {
+                const label = this.nextElementSibling;
+                if (this.value.trim() !== "") {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
